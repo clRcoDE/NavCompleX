@@ -25,7 +25,7 @@ import Pay from './src/components/Pay'
 import Plans from './src/components/Plans'
 import Wallets from './src/components/Wallets'
 import Notifications from './src/components/Notifications'
-
+import TermsAndpolicy from './src/components/TermsAndPolicy'
 
 
 
@@ -70,13 +70,32 @@ const ContactsNavigator = createStackNavigator(
   }
 )
 
+const  RecommendedStack = createStackNavigator(
+  {
+    RecommendedScreen:Recommended
 
+  }
+)
+
+const  TrendsStack = createStackNavigator(
+  {
+    TrendsScreen:Trends
+
+  }
+)
+
+const  TopPostsStack = createStackNavigator(
+  {
+    TopPostsScreen:TopPosts
+
+  }
+)
 
 const SightBottomNavigator = createBottomTabNavigator(
   {
-    Recommended:Recommended,
-    TopPosts:TopPosts,
-    Trends:Trends
+    Recommended:RecommendedStack,
+    TopPosts:TopPostsStack,
+    Trends:TrendsStack
   },{
     initialRouteName:'TopPosts'
   }
@@ -95,12 +114,21 @@ const AppDrawerNavigator = createDrawerNavigator(
   }
 )
 
-
+const SignupStack = createStackNavigator(
+  {
+    Main:Signup,
+    Modal:TermsAndpolicy
+  },{
+    mode:'modal',
+    headerMode:'none'
+  }
+)
 
 const AppAuthNavigator = createSwitchNavigator(
   {
     Login:Login,
-    Signup:Signup,
+    Signup:SignupStack,
+
     DrawerNavigator:AppDrawerNavigator
   },{
     initialRouteName:'Login'
