@@ -31,33 +31,33 @@ const styles = StyleSheet.create({
 
   container:{
     flex:1,
-    backgroundColor:'yellow',
+    // backgroundColor:'yellow',
   },
   wrapper:{
     flex:1,
-    backgroundColor:'red',
+    // backgroundColor:'red',
   },
   logoWrapper:{
-    flex:2,
-    backgroundColor:'purple',
+    flex:4,
+    // backgroundColor:'purple',
     justifyContent: 'center',
     alignItems: 'center',
   },
   inputWrapper:{
-    backgroundColor:'green',
-    flex:3,
+    // backgroundColor:'green',
+    flex:6,
     justifyContent: 'space-evenly',
     alignItems: 'center',
   },
   buttonWrapper:{
     flex:2,
-    backgroundColor:'red',
+    // backgroundColor:'red',
     justifyContent: 'center',
     alignItems: 'center',
   },
   gotoSignup:{
-    flex:1,
-    backgroundColor:'blue',
+    flex:2,
+    // backgroundColor:'blue',
     justifyContent: 'center',
     alignItems: 'center',
   },

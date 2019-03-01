@@ -8,7 +8,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, Image ,TouchableOpacity} from 'react-native';
 import { createAppContainer , createSwitchNavigator , createStackNavigator , createDrawerNavigator , createBottomTabNavigator } from 'react-navigation'
 import About from './src/components/About'
 import ItemList from './src/components/ItemList'
@@ -63,7 +63,19 @@ const BalanceNavigator = createSwitchNavigator(
 
 const ContactsNavigator = createStackNavigator(
   {
-    ItemList:ItemList,
+    ItemList:{
+      screen:ItemList,
+      navigationOptions:({navigation})=>{
+        return{
+          title:'users',
+          headerLeft:(<TouchableOpacity 
+            style={{marginHorizontal:15}}
+             onPress={()=>navigation.openDrawer()} >
+             <Image source={require('./src/assets/images/menu.png')} 
+              style={{width:20,height:20}}/>
+              </TouchableOpacity>)
+        }
+      }},
     UserProfile:UserProfile
   },{
     initialRouteName:'ItemList'
@@ -74,6 +86,11 @@ const  RecommendedStack = createStackNavigator(
   {
     RecommendedScreen:Recommended
 
+  },{
+    defaultNavigationOptions:({navigation})=>({
+      title:'recommended ',
+      headerLeft:(<TouchableOpacity style={{marginHorizontal:15}} onPress={()=>navigation.openDrawer()} ><Image source={require('./src/assets/images/menu.png')}  style={{width:20,height:20}}/></TouchableOpacity>)
+    })
   }
 )
 
@@ -81,6 +98,11 @@ const  TrendsStack = createStackNavigator(
   {
     TrendsScreen:Trends
 
+  },{
+    defaultNavigationOptions:({navigation})=>({
+      title:'Trends',
+      headerLeft:(<TouchableOpacity  style={{marginHorizontal:15}} onPress={()=>navigation.openDrawer()} ><Image source={require('./src/assets/images/menu.png')}  style={{width:20,height:20}}/></TouchableOpacity>)
+    })
   }
 )
 
@@ -88,6 +110,16 @@ const  TopPostsStack = createStackNavigator(
   {
     TopPostsScreen:TopPosts
 
+  },{
+    defaultNavigationOptions:({navigation})=>({
+      title:'Top Posts',
+      headerLeft:(
+      <TouchableOpacity style={{marginHorizontal:15}} onPress={()=>navigation.openDrawer()} >
+      <Image source={require('./src/assets/images/menu.png')}  
+      style={{width:20,height:20}}/>
+      </TouchableOpacity>
+      )
+    })
   }
 )
 
@@ -97,7 +129,26 @@ const SightBottomNavigator = createBottomTabNavigator(
     TopPosts:TopPostsStack,
     Trends:TrendsStack
   },{
-    initialRouteName:'TopPosts'
+    initialRouteName:'TopPosts',
+    defaultNavigationOptions:({navigation})=>({
+      tabBarOptions: {
+        activeTintColor: 'royalblue',
+        inactiveTintColor:'#555',
+        labelStyle: {
+          fontSize: 12,
+        },
+        style: {
+          backgroundColor: '#eee',
+          height:70,
+        },
+        
+      },
+      tabBarIcon:(
+      <Image 
+      source={require('./src/assets/images/circle.png')}
+       style={{width:20,height:20}}/>
+       )
+    })
   }
 )
 
@@ -110,7 +161,8 @@ const AppDrawerNavigator = createDrawerNavigator(
     Balance:BalanceNavigator,
     Sight:SightBottomNavigator
   },{
-    initialRouteName:'Sight'
+    initialRouteName:'Sight',
+    
   }
 )
 
