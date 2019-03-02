@@ -7,7 +7,8 @@ export default class ItemList extends Component {
     super(props)
     this.state={
       data:[],
-      isLoading:true
+      isLoading:true,
+      Jdata:[]
     }
   }
 
@@ -23,10 +24,12 @@ onPressNavigator=({name , picture , email})=>{
   }
   componentDidMount(){
 
-    fetch(`https://randomuser.me/api?results=16`)
+    fetch(`https://randomuser.me/api?results=5`)
     .then(res=> res.json())
     .then(data => this.setState({data:data.results},()=>{this.setState({isLoading:false})}))
     .catch(e=> console.warn('connection error'))
+
+
   }
   render() {
     return (

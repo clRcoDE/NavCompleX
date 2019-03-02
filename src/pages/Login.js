@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Text, StyleSheet, View  ,Image , TextInput , TouchableHighlight , TouchableOpacity} from 'react-native'
 import {logo} from '../assets/images/Index'
+
 export default class Login extends Component {
 
 onPressNavigator=(des)=>{

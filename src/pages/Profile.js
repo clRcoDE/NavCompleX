@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Text, StyleSheet, View , FlatList , TouchableOpacity , Image} from 'react-native'
 
-
+let Jdata
 let suggestionsTabData=[
   {
     title:'pay',
@@ -23,7 +23,9 @@ let suggestionsTabData=[
   }
 ]
 
+
 export default class Profile extends Component {
+
 
   static navigationOptions=({navigation})=>{
  return{
