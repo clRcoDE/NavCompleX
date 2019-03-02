@@ -11,7 +11,8 @@ export default class Notifications extends Component {
 
   
 onPressNavigator=()=>{
-  this.props.navigation.goBack()
+  const {navigation} = this.props
+  navigation.goBack()
   }
     render() {
         return (
@@ -30,7 +31,7 @@ onPressNavigator=()=>{
         />
         </View>
         <View style={styles.goBackWrapper}>
-        <TouchableOpacity  onPress={()=>this.onPressNavigator()} style={styles.touchableBox}>
+        <TouchableOpacity  onPress={this.onPressNavigator.bind(this)} style={styles.touchableBox}>
         <Text>back to profile</Text>
         </TouchableOpacity>
         </View>

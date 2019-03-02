@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Text, StyleSheet, View,Image ,ActivityIndicator,Dimensions} from 'react-native'
-
+import {logo} from '../assets/images/Index'
 
 const dim = Dimensions.get('window')
 export default class Loading extends Component {
@@ -9,8 +9,8 @@ export default class Loading extends Component {
 
   
   timeNavigate=()=>{
-
-    setTimeout(()=> this.props.navigation.navigate('Auth'),1500)
+const {navigation} = this.props
+    setTimeout(()=> navigation.navigate('Auth'),1500)
  
   }
 
@@ -28,7 +28,7 @@ export default class Loading extends Component {
       <View style={styles.logoWrapper}>
       <View style={styles.logoImage}>
       
-      <Image source={require('../assets/images/logo.png')} style={styles.logo}/></View>
+      <Image source={logo} style={styles.logo}/></View>
       
       <Text style={styles.logoText} >PaXineR</Text>
       </View>

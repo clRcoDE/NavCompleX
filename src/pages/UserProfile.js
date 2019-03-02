@@ -12,16 +12,17 @@ static navigationOptions=({navigation})=>{
 
 
   render() {
-
-    const userinfo = this.props.navigation.getParam('userinfo','empty')
+    const {navigation} = this.props
+    const userinfo = navigation.getParam('userinfo','empty')
+    const {name , email , photo} = userinfo
     return (
       <View style={styles.container}>
         <View style={styles.header}>
-        <Image source={{uri: userinfo.photo}} style={styles.avatar}/>
+        <Image source={{uri: photo}} style={styles.avatar}/>
         </View>
         <View style={styles.body}>
-        <Text style={styles.nameText} >{userinfo.name}</Text>
-        <Text style={styles.emailText} >{userinfo.email}</Text>
+        <Text style={styles.nameText} >{name}</Text>
+        <Text style={styles.emailText} >{email}</Text>
         </View>
       </View>
     )

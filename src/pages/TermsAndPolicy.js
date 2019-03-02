@@ -44,7 +44,7 @@ onPressNavigator=()=>{
         </Text>
       </View>
       <View style={styles.goBackWrapper}>
-        <TouchableOpacity  style={styles.goBackButton} onPress={() => this.onPressNavigator()}>
+        <TouchableOpacity  style={styles.goBackButton} onPress={this.onPressNavigator.bind(this)}>
           <Text> Back </Text>
         </TouchableOpacity>
       </View>

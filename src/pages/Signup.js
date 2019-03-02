@@ -8,12 +8,13 @@ import {
   TouchableHighlight,
   TouchableOpacity
 } from "react-native";
-
+import {logo} from '../assets/images/Index'
 export default class Signup extends Component {
 
   
 onPressNavigator=(des)=>{
-  this.props.navigation.navigate(des)
+  const {navigation} = this.props
+  navigation.navigate(des)
   }
   render() {
     return (
@@ -21,7 +22,7 @@ onPressNavigator=(des)=>{
         <View style={styles.wrapper}>
           <View style={styles.logoWrapper}>
             <Image
-              source={require("../assets/images/logo.png")}
+              source={logo}
               style={styles.logo}
             />
           </View>

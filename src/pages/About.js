@@ -1,18 +1,17 @@
 import React, { Component } from 'react'
 import { Text, StyleSheet, View , Image , TouchableOpacity } from 'react-native'
-
-export default class About extends Component {
+import {logo} from '../assets/images/Index'
+export default  About =({navigation})=> {
 
   
 onPressNavigator=()=>{
-  this.props.navigation.goBack()
+ navigation.goBack()
   }
-  render() {
     return (
       <View style={styles.container}>
         <View style={styles.Wrapper}>
         <View style={styles.logoWrapper}>
-        <Image source={require('../assets/images/logo.png')} style={styles.logo}/>
+        <Image source={logo} style={styles.logo}/>
         </View>
         <View style={styles.aboutWrapper}>
         <View style={styles.textWrapper}>
@@ -25,7 +24,7 @@ onPressNavigator=()=>{
         </View>
         </View>
         <View style={styles.goBackWrapper}>
-        <TouchableOpacity  style={styles.touchableBox} onPress={()=>this.onPressNavigator()}>
+        <TouchableOpacity  style={styles.touchableBox} onPress={this.onPressNavigator.bind(this)}>
         <Text>go Back</Text>
         
         </TouchableOpacity>
@@ -37,7 +36,6 @@ onPressNavigator=()=>{
 
       </View>
     )
-  }
 }
 
 

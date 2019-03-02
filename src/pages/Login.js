@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { Text, StyleSheet, View  ,Image , TextInput , TouchableHighlight , TouchableOpacity} from 'react-native'
-
+import {logo} from '../assets/images/Index'
 export default class Login extends Component {
 
 onPressNavigator=(des)=>{
-this.props.navigation.navigate(des)
+
+  const {navigation} = this.props
+navigation.navigate(des)
 }
 
   render() {
@@ -12,7 +14,7 @@ this.props.navigation.navigate(des)
       <View style={styles.container}>
         <View style={styles.wrapper}>
         <View style={styles.logoWrapper}>
-        <Image source={require('../assets/images/logo.png')}  style={styles.logo} /></View>
+        <Image source={logo}  style={styles.logo} /></View>
         <View style={styles.inputWrapper}>
         <TextInput style={styles.textInput} placeholder={'username'} onChangeText={this.getUserInput} />
         <TextInput style={styles.textInput} placeholder={'password'} onChangeText={this.getPassInput} />

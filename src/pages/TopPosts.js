@@ -1,11 +1,25 @@
 import React, { Component } from 'react'
 import { Text, StyleSheet, View } from 'react-native'
 
-export default class TopPosts extends Component {
+export default  TopPosts =()=> {
+// static navigationOptions=({navigation})=>{
+//   return{
+//     header:{
+//       style:{
+//         position: 'absolute',
+//         backgroundColor:'transparent',
+//         zIndex: 100,
+//         top:0,
+//         left:0,
+//         right:0
+//       }
+//     }
+//   }
+// }
 
 
-  
-  render() {
+
+
     return (
       <View style={styles.container}>
         <View style={styles.Wrapper}>
@@ -14,7 +28,7 @@ export default class TopPosts extends Component {
 
       </View>
     )
-  }
+  
 }
 
 

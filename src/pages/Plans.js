@@ -13,14 +13,15 @@ export default class Plans extends Component {
   }
 
   onPressNavigator=()=>{
-    this.props.navigation.goBack()
+    const {navigation} = this.props
+    navigation.goBack()
     }
     render() {
         return (
           <View style={styles.container}>
         <View style={styles.Wrapper}>
         <Text>Plans : Under Developing</Text>
-        <Text onPress={()=>this.onPressNavigator()} >go Back</Text>
+        <Text onPress={this.onPressNavigator.bind(this)} >go Back</Text>
         </View>
 
       </View>

@@ -12,12 +12,13 @@ export default class ItemList extends Component {
   }
 
   
-onPressNavigator=(itemData)=>{
-  this.props.navigation.navigate('UserProfile', {
+onPressNavigator=({name , picture , email})=>{
+  const {navigation} = this.props
+  navigation.navigate('UserProfile', {
     userinfo:{
-      name:itemData.name.last,
-      photo:itemData.picture.medium,
-      email:itemData.email
+      name:name.last,
+      photo:picture.medium,
+      email:email
     } })
   }
   componentDidMount(){

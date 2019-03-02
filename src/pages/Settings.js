@@ -1,21 +1,29 @@
 import React, { Component } from 'react'
 import { Text, StyleSheet, View } from 'react-native'
 
-export default class Trends extends Component {
+export default class Settings extends Component {
 
 
-  
+
+  onPressNavigator=()=>{
+    const {navigation} = this.props
+    navigation.goBack()
+    }
+
   render() {
     return (
       <View style={styles.container}>
-      <View style={styles.Wrapper}>
-      <Text>Trends : Under Developing</Text>
-      </View>
+        <View style={styles.Wrapper}>
+        <Text>Under Developing</Text>
+        <Text onPress={this.onPressNavigator.bind(this)} >go Back</Text>
+        </View>
 
-    </View>
+      </View>
     )
   }
 }
+
+
 
 
 
@@ -37,4 +45,3 @@ justifyContent: 'center',
 alignItems: 'center',
   }
 })
-
