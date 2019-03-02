@@ -40,6 +40,12 @@ export default class Profile extends Component {
    
  }
   }
+
+
+  
+onPressNavigator=(des,item)=>{
+  this.props.navigation.navigate(`${des}`,{subData:item})
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -56,7 +62,7 @@ export default class Profile extends Component {
        horizontal={true} 
        keyExtractor={(_,index)=>`${index} `}
       renderItem={({item})=>(
-        <TouchableOpacity   onPress={()=>this.props.navigation.navigate(`${item.navigate}`,{subData:item})}  style={[styles.suggestionItem,{backgroundColor:item.color}]}>
+        <TouchableOpacity   onPress={()=>this.onPressNavigator(item.navigate,item) }  style={[styles.suggestionItem,{backgroundColor:item.color}]}>
         <View style={styles.titleTextWrapper} ><Text style={styles.titleText} >{item.title}</Text></View>
         <View style={styles.descTextWrapper} ><Text style={styles.descText} >{item.desc}</Text></View>
         </TouchableOpacity>

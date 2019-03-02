@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import { Text, StyleSheet, View  ,Image , TextInput , TouchableHighlight , TouchableOpacity} from 'react-native'
 
 export default class Login extends Component {
+
+onPressNavigator=(des)=>{
+this.props.navigation.navigate(des)
+}
+
   render() {
     return (
       <View style={styles.container}>
@@ -13,12 +18,12 @@ export default class Login extends Component {
         <TextInput style={styles.textInput} placeholder={'password'} onChangeText={this.getPassInput} />
         </View>
         <View style={styles.buttonWrapper}>
-<TouchableHighlight  style={styles.signinButton} onPress={()=>this.props.navigation.navigate('DrawerNavigator')}  underlayColor={'transparent'} >
+<TouchableHighlight  style={styles.signinButton} onPress={()=>this.onPressNavigator('DrawerNavigator')}  underlayColor={'transparent'} >
 <Text>SIGN IN</Text>
 </TouchableHighlight>
 </View>
         <View style={styles.gotoSignup}>
-        <TouchableOpacity  style={styles.createNewAccButton} onPress={()=>this.props.navigation.navigate('Signup')}  underlayColor={'transparent'} >
+        <TouchableOpacity  style={styles.createNewAccButton} onPress={()=>this.onPressNavigator('Signup')}  underlayColor={'transparent'} >
 <Text>or create New Account ? </Text>
 </TouchableOpacity></View>
         </View>

@@ -6,8 +6,17 @@ const dim = Dimensions.get('window')
 export default class Loading extends Component {
 
 
+
+  
+  timeNavigate=()=>{
+
+    setTimeout(()=> this.props.navigation.navigate('Auth'),1500)
+ 
+  }
+
   componentDidMount(){
-    setTimeout(()=>this.props.navigation.navigate('Auth'),2000)
+
+    this.timeNavigate()
   }
 
   

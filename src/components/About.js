@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import { Text, StyleSheet, View , Image , TouchableOpacity } from 'react-native'
 
 export default class About extends Component {
+
+  
+onPressNavigator=()=>{
+  this.props.navigation.goBack()
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -20,7 +25,7 @@ export default class About extends Component {
         </View>
         </View>
         <View style={styles.goBackWrapper}>
-        <TouchableOpacity  style={styles.touchableBox} onPress={()=>this.props.navigation.goBack()}>
+        <TouchableOpacity  style={styles.touchableBox} onPress={()=>this.onPressNavigator()}>
         <Text>go Back</Text>
         
         </TouchableOpacity>

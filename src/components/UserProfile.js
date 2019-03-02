@@ -8,6 +8,9 @@ static navigationOptions=({navigation})=>{
     title:` hi i'm ${headerName.name}`
   }
 }
+
+
+
   render() {
 
     const userinfo = this.props.navigation.getParam('userinfo','empty')

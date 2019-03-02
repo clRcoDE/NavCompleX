@@ -7,6 +7,12 @@ export default class Notifications extends Component {
       title:'Your Notifications'
     }
   }
+
+
+  
+onPressNavigator=()=>{
+  this.props.navigation.goBack()
+  }
     render() {
         return (
           <View style={styles.container}>
@@ -24,7 +30,7 @@ export default class Notifications extends Component {
         />
         </View>
         <View style={styles.goBackWrapper}>
-        <TouchableOpacity  onPress={()=>this.props.navigation.goBack()} style={styles.touchableBox}>
+        <TouchableOpacity  onPress={()=>this.onPressNavigator()} style={styles.touchableBox}>
         <Text>back to profile</Text>
         </TouchableOpacity>
         </View>

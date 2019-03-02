@@ -12,12 +12,17 @@ export default class Wallets extends Component {
       
     }
   }
+
+  
+onPressNavigator=()=>{
+  this.props.navigation.goBack()
+  }
     render() {
         return (
           <View style={styles.container}>
         <View style={styles.Wrapper}>
         <Text>Wallet : Under Developing</Text>
-        <Text onPress={()=>this.props.navigation.navigate('Profile')} >go Back</Text>
+        <Text onPress={()=>this.onPressNavigator()} >go Back</Text>
         </View>
 
       </View>

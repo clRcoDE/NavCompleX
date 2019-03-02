@@ -10,6 +10,11 @@ import {
 } from "react-native";
 
 export default class Signup extends Component {
+
+  
+onPressNavigator=(des)=>{
+  this.props.navigation.navigate(des)
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -44,7 +49,7 @@ export default class Signup extends Component {
               </Text>
               <TouchableOpacity
                 style={styles.termsTouchable}
-                onPress={() => this.props.navigation.navigate("Modal")}
+                onPress={() => this.onPressNavigator('Modal')}
               >
                 <Text style={styles.termsText}> all Terms and Services </Text>
               </TouchableOpacity>
@@ -53,7 +58,7 @@ export default class Signup extends Component {
           <View style={styles.buttonWrapper}>
             <TouchableHighlight
               style={styles.signinButton}
-              onPress={() => this.props.navigation.navigate("DrawerNavigator")}
+              onPress={() => this.onPressNavigator('DrawerNavigator')}
               underlayColor={"transparent"}
             >
               <Text>SIGN UP</Text>
@@ -62,7 +67,7 @@ export default class Signup extends Component {
           <View style={styles.gotoSignup}>
             <TouchableOpacity
               style={styles.createNewAccButton}
-              onPress={() => this.props.navigation.navigate("Login")}
+              onPress={() => this.onPressNavigator('Login')}
               underlayColor={"transparent"}
             >
               <Text>Already Signed up ? </Text>

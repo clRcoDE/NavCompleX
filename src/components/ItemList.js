@@ -10,6 +10,16 @@ export default class ItemList extends Component {
       isLoading:true
     }
   }
+
+  
+onPressNavigator=(itemData)=>{
+  this.props.navigation.navigate('UserProfile', {
+    userinfo:{
+      name:itemData.name.last,
+      photo:itemData.picture.medium,
+      email:itemData.email
+    } })
+  }
   componentDidMount(){
 
     fetch(`https://randomuser.me/api?results=16`)
@@ -26,12 +36,7 @@ export default class ItemList extends Component {
         data={this.state.data}
         keyExtractor={(_,index)=>`index `}
         renderItem={({item})=>(
-          <TouchableOpacity  style={styles.itemWrapper} onPress={()=>this.props.navigation.navigate('UserProfile', {
-            userinfo:{
-              name:item.name.last,
-              photo:item.picture.medium,
-              email:item.email
-            } })} >
+          <TouchableOpacity  style={styles.itemWrapper} onPress={()=>this.onPressNavigator(item)} >
           <View style={styles.subInfo}>
           <Text style={styles.itemName} >{item.name.last}</Text>
           <Text>{item.location.timezone.description}</Text>

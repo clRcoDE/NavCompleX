@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { Text, StyleSheet, View, TouchableOpacity } from "react-native";
 
 const TermsAndPolicy = ({ navigation }) => {
+  
+onPressNavigator=()=>{
+  navigation.goBack()
+  }
   return (
     <View style={styles.modalContainer}>
       <View style={styles.termsTextWrapper}>
@@ -40,7 +44,7 @@ const TermsAndPolicy = ({ navigation }) => {
         </Text>
       </View>
       <View style={styles.goBackWrapper}>
-        <TouchableOpacity  style={styles.goBackButton} onPress={() => navigation.goBack()}>
+        <TouchableOpacity  style={styles.goBackButton} onPress={() => this.onPressNavigator()}>
           <Text> Back </Text>
         </TouchableOpacity>
       </View>
