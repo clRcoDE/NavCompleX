@@ -8,7 +8,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Image ,TouchableOpacity} from 'react-native';
+import { Platform, StyleSheet, Text, View, Image ,TouchableOpacity } from 'react-native';
 import { createAppContainer , createSwitchNavigator , createStackNavigator , createDrawerNavigator , createBottomTabNavigator } from 'react-navigation'
 import About from './src/components/About'
 import ItemList from './src/components/ItemList'
@@ -43,22 +43,22 @@ export default class App extends Component {
 
 
 
-const SuggestionsListNavigator = createSwitchNavigator(
-  {
-    Pay:Pay,
-    Plans:Plans,
-    Wallets:Wallets,
+// const SuggestionsListNavigator = createSwitchNavigator(
+//   {
     
-
-  },
-)
+//   },
+// )
 
 
 const BalanceNavigator = createStackNavigator(
   {
     Profile:Profile,
     Notifications:Notifications,
-    SuggestionsListNavigator:SuggestionsListNavigator
+    Pay:Pay,
+    Plans:Plans,
+    Wallets:Wallets,
+    
+
   },
 )
 
@@ -179,31 +179,35 @@ const AppDrawerNavigator = createDrawerNavigator(
   }
 )
 
-const SignupStack = createStackNavigator(
+const AuthsPagesNavigator = createStackNavigator(
   {
-    Main:Signup,
+    Signup:Signup,
+    Login:Login,
     Modal:TermsAndpolicy
   },{
+    initialRouteName:'Login',
     mode:'modal',
     headerMode:'none'
   }
 )
 
-const AppAuthNavigator = createSwitchNavigator(
-  {
-    Login:Login,
-    Signup:SignupStack,
 
+
+
+const AppStarter = createSwitchNavigator(
+  {
+    AuthsPages:AuthsPagesNavigator,
     DrawerNavigator:AppDrawerNavigator
   },{
-    initialRouteName:'Login'
+    initialRouteName:'AuthsPages',
+   
   }
 )
 
 const AppStartNavigator = createSwitchNavigator(
   {
     Loading:Loading,
-    Auth:AppAuthNavigator
+    Auth:AppStarter
   },{
     initialRouteName:'Loading'
   }

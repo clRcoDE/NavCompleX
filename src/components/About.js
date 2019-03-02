@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View , Image } from 'react-native'
+import { Text, StyleSheet, View , Image , TouchableOpacity } from 'react-native'
 
 export default class About extends Component {
   render() {
@@ -20,8 +20,12 @@ export default class About extends Component {
         </View>
         </View>
         <View style={styles.goBackWrapper}>
+        <TouchableOpacity  style={styles.touchableBox} onPress={()=>this.props.navigation.goBack()}>
+        <Text>go Back</Text>
         
-        <Text onPress={()=>this.props.navigation.goBack()} >go Back</Text></View>
+        </TouchableOpacity>
+        
+        </View>
        
         
         </View>
@@ -87,5 +91,11 @@ padding: 12,
     flex:1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  touchableBox:{
+    paddingHorizontal:65,
+    paddingVertical: 25,
+    borderRadius:50,
+    backgroundColor:'#ccc'
   }
 })

@@ -8,7 +8,7 @@ export default class Pay extends Component {
     const data = navigation.getParam('subData','empty')
   
     return{
-      title:'yours',
+      title:`your ${data.title}s`,
       
     }
   }
