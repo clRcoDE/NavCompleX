@@ -10,6 +10,7 @@ export default class About extends Component {
         <Image source={require('../assets/images/logo.png')} style={styles.logo}/>
         </View>
         <View style={styles.aboutWrapper}>
+        <View style={styles.textWrapper}>
         <Text style={styles.aboutText} >created with 
         <Image style={styles.heart} 
         source={require('../assets/images/heart.png')} />
@@ -17,9 +18,12 @@ export default class About extends Component {
          </Text>
         
         </View>
+        </View>
+        <View style={styles.goBackWrapper}>
         
+        <Text onPress={()=>this.props.navigation.goBack()} >go Back</Text></View>
        
-        <Text onPress={()=>this.props.navigation.goBack()} >go Back</Text>
+        
         </View>
 
       </View>
@@ -42,12 +46,12 @@ const styles = StyleSheet.create({
   Wrapper:{
 flex:1,
 
-backgroundColor:'yellow'
+// backgroundColor:'yellow'
   },
   aboutText:{
     fontWeight:'600',
     fontSize:20,
-    color:'#444'
+    color:'#444',
   },
   heart:{
     width:15,
@@ -55,7 +59,7 @@ backgroundColor:'yellow'
   },
   logoWrapper:{
     flex:1,
-    backgroundColor:'blue',
+    // backgroundColor:'blue',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -65,9 +69,23 @@ backgroundColor:'yellow'
   },
   aboutWrapper:{
     flex:1,
-    // backgroundColor:'red',   
+    // backgroundColor:'red', 
     
-    // justifyContent: 'center',
+justifyContent: 'center',  
+alignItems:'center',
+
+    
+  },
+  textWrapper:{
+// backgroundColor:'yellow',
+
+justifyContent: 'center',  
+alignItems:'center',
+padding: 12,
+  },
+  goBackWrapper:{
+    flex:1,
+    justifyContent: 'center',
     alignItems: 'center',
   }
 })
