@@ -6,7 +6,7 @@ export default class TopPosts extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.Wrapper}>
-        <Text>Under Developing</Text>
+        <Text>TopPost : Under Developing</Text>
         </View>
 
       </View>

@@ -6,8 +6,8 @@ export default class Plans extends Component {
         return (
           <View style={styles.container}>
         <View style={styles.Wrapper}>
-        <Text>Under Developing</Text>
-        <Text onPress={()=>this.props.navigation.goBack()} >go Back</Text>
+        <Text>Plans : Under Developing</Text>
+        <Text onPress={()=>this.props.navigation.navigate('Profile')} >go Back</Text>
         </View>
 
       </View>

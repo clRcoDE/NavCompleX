@@ -6,8 +6,8 @@ export default class Wallets extends Component {
         return (
           <View style={styles.container}>
         <View style={styles.Wrapper}>
-        <Text>Under Developing</Text>
-        <Text onPress={()=>this.props.navigation.goBack()} >go Back</Text>
+        <Text>Wallet : Under Developing</Text>
+        <Text onPress={()=>this.props.navigation.navigate('Profile')} >go Back</Text>
         </View>
 
       </View>

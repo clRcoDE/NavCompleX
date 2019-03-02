@@ -43,22 +43,23 @@ export default class App extends Component {
 
 
 
-const SuggestionsListNavigator = createStackNavigator(
+const SuggestionsListNavigator = createSwitchNavigator(
   {
     Pay:Pay,
     Plans:Plans,
-    Wallets:Wallets
+    Wallets:Wallets,
+    
 
-  }
+  },
 )
 
 
-const BalanceNavigator = createSwitchNavigator(
+const BalanceNavigator = createStackNavigator(
   {
     Profile:Profile,
     Notifications:Notifications,
     SuggestionsListNavigator:SuggestionsListNavigator
-  }
+  },
 )
 
 const ContactsNavigator = createStackNavigator(
@@ -89,7 +90,13 @@ const  RecommendedStack = createStackNavigator(
   },{
     defaultNavigationOptions:({navigation})=>({
       title:'recommended ',
-      headerLeft:(<TouchableOpacity style={{marginHorizontal:15}} onPress={()=>navigation.openDrawer()} ><Image source={require('./src/assets/images/menu.png')}  style={{width:20,height:20}}/></TouchableOpacity>)
+      headerLeft:(
+      <TouchableOpacity 
+      style={{marginHorizontal:15}} 
+      onPress={()=>navigation.openDrawer()} >
+      <Image source={require('./src/assets/images/menu.png')} 
+       style={{width:20,height:20}}/>
+       </TouchableOpacity>)
     })
   }
 )
@@ -101,7 +108,13 @@ const  TrendsStack = createStackNavigator(
   },{
     defaultNavigationOptions:({navigation})=>({
       title:'Trends',
-      headerLeft:(<TouchableOpacity  style={{marginHorizontal:15}} onPress={()=>navigation.openDrawer()} ><Image source={require('./src/assets/images/menu.png')}  style={{width:20,height:20}}/></TouchableOpacity>)
+      headerLeft:(
+      <TouchableOpacity  
+      style={{marginHorizontal:15}} 
+      onPress={()=>navigation.openDrawer()} >
+      <Image source={require('./src/assets/images/menu.png')} 
+       style={{width:20,height:20}}/>
+       </TouchableOpacity>)
     })
   }
 )

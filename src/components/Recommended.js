@@ -6,7 +6,7 @@ export default class Recommended extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.Wrapper}>
-        <Text>Under Developing</Text>
+        <Text>Recommended : Under Developing</Text>
         </View>
 
       </View>

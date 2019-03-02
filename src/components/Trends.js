@@ -6,7 +6,7 @@ export default class Trends extends Component {
     return (
       <View style={styles.container}>
       <View style={styles.Wrapper}>
-      <Text>Under Developing</Text>
+      <Text>Trends : Under Developing</Text>
       </View>
 
     </View>

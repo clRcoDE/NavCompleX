@@ -1,42 +1,42 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View , FlatList , TouchableOpacity} from 'react-native'
+import { Text, StyleSheet, View , FlatList , TouchableOpacity ,ActivityIndicator} from 'react-native'
 
 
 export default class ItemList extends Component {
   constructor(props){
     super(props)
     this.state={
-      data:[]
+      data:[],
+      isLoading:true
     }
   }
   componentDidMount(){
+
     fetch(`https://randomuser.me/api?results=16`)
     .then(res=> res.json())
-    .then(data => this.setState({data:data.results},))
+    .then(data => this.setState({data:data.results},()=>{this.setState({isLoading:false})}))
     .catch(e=> console.warn('connection error'))
   }
   render() {
     return (
       
         <View style={styles.flatlistWrapper}>
+        {this.state.isLoading && <ActivityIndicator animating={true} size={"large"} />}
         <FlatList
         data={this.state.data}
         keyExtractor={(_,index)=>`index `}
         renderItem={({item})=>(
-          <View style={styles.itemWrapper}>
-          <TouchableOpacity 
-          onPress={()=>this.props.navigation.navigate('UserProfile', {
+          <TouchableOpacity  style={styles.itemWrapper} onPress={()=>this.props.navigation.navigate('UserProfile', {
             userinfo:{
               name:item.name.last,
               photo:item.picture.medium,
               email:item.email
-            }
-           
-            })} style={styles.subInfo}>
+            } })} >
+          <View style={styles.subInfo}>
           <Text style={styles.itemName} >{item.name.last}</Text>
           <Text>{item.location.timezone.description}</Text>
-          </TouchableOpacity>
           </View>
+          </TouchableOpacity>
         )}
         />
         </View>
